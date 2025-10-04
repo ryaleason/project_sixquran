@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ArrowLeft, Play, Pause, Volume2, BookOpen, MapPin, FileText } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const HalamanDetail = () => {
   const [data, setData] = useState(null);
@@ -10,9 +10,9 @@ const HalamanDetail = () => {
   const [selectedQari, setSelectedQari] = useState('03');
   const audioRef = useRef(null);
   const navigate = useNavigate();
+  const {id} = useParams();
 
  
-  const id = 1; 
 
   const qariList = [
     { id: '01', name: 'Abdullah Al-Juhany' },
