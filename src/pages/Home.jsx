@@ -132,7 +132,7 @@ const Home = () => {
       <footer className="bg-white border-t border-emerald-100 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
           <p className="text-center text-emerald-600">
-            © 2025 Al-Quran Digital Indonesia. Data dari EQuran.id
+            © 2025 SixQuran Digital Indonesia. Data dari EQuran.id
           </p>
         </div>
       </footer>
