@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Book, Volume2, Search, ArrowRight } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   const fetchSuratList = async () => {
     try {
@@ -30,23 +33,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-emerald-100">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-                <Book className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-emerald-800">Al-Quran Digital</h1>
-                <p className="text-sm text-emerald-600">Bahasa Indonesia</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar/>
 
-      {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-emerald-900 mb-4">
@@ -108,7 +96,7 @@ const Home = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredData.map((item) => (
-                <div
+                <div onClick={() => navigate(`/surat/${item.nomor}`)}
                   key={item.nomor}
                   className="bg-white rounded-xl p-5 shadow-sm border border-emerald-100 hover:shadow-lg hover:border-emerald-300 transition-all cursor-pointer group"
                 >
