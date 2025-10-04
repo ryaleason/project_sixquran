@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Book, Volume2, Search, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
+import book from '../assets/system-regular-19-book-morph-book (1).gif';
+import play from '../assets/system-regular-26-play-morph-play-pause.gif';
+import news from '../assets/system-regular-14-article-hover-article.gif';
+
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -32,8 +36,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-      {/* Header */}
-      <Navbar/>
+      <Navbar />
 
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -41,7 +44,7 @@ const Home = () => {
             Baca, Dengar, dan Pelajari Al-Quran
           </h2>
           <p className="text-lg text-emerald-700 max-w-2xl mx-auto">
-            Akses lengkap 114 surat Al-Quran dengan terjemahan bahasa Indonesia, 
+            Akses lengkap 114 surat Al-Quran dengan terjemahan bahasa Indonesia,
             audio berkualitas tinggi, dan tafsir yang mudah dipahami
           </p>
         </div>
@@ -62,23 +65,23 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
-              <Book className="w-6 h-6 text-emerald-600" />
+              <img src={book} alt="" className='w-8 h-8' srcset="" />
             </div>
             <h3 className="text-lg font-semibold text-emerald-900 mb-2">Teks Arab & Terjemahan</h3>
             <p className="text-emerald-600">Teks Arab lengkap dengan transliterasi dan terjemahan Indonesia</p>
           </div>
-          
+
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
-              <Volume2 className="w-6 h-6 text-teal-600" />
+              <img src={play} alt="" className='w-8 h-8' srcset="" />
             </div>
             <h3 className="text-lg font-semibold text-emerald-900 mb-2">Audio Berkualitas</h3>
             <p className="text-emerald-600">Dengarkan bacaan dari qari terbaik dunia dengan suara jernih</p>
           </div>
-          
+
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
-              <Book className="w-6 h-6 text-emerald-600" />
+              <img src={news} alt="" className='w-8 h-8' srcset="" />
             </div>
             <h3 className="text-lg font-semibold text-emerald-900 mb-2">Tafsir Lengkap</h3>
             <p className="text-emerald-600">Memahami makna dengan tafsir yang mudah dipahami</p>
@@ -87,7 +90,7 @@ const Home = () => {
 
         <div className="mb-8">
           <h3 className="text-2xl font-bold text-emerald-900 mb-6">Daftar Surat Al-Quran</h3>
-          
+
           {loading ? (
             <div className="text-center py-12">
               <div className="inline-block w-12 h-12 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin"></div>
@@ -114,7 +117,7 @@ const Home = () => {
                     </div>
                     <span className="text-2xl text-emerald-800 font-arabic">{item.nama}</span>
                   </div>
-                  
+
                   <div className="flex items-center justify-between text-sm text-emerald-600 pt-3 border-t border-emerald-100">
                     <span>{item.jumlahAyat} Ayat</span>
                     <span className="flex items-center space-x-1">
